@@ -13,12 +13,11 @@ function playerChoice() {
 
 
 // create random choice for computer
-const element = ["rock" ,"paper","Scissors "];
+const element = ["rock" ,"paper","scissors"];
 
 function compChoice() {
     let compSelection = element[Math.floor(Math.random() * element.length)];
     return compSelection;
-    console.log(compSelection);
 }
 
 // play a round and give a winner 
@@ -30,22 +29,31 @@ function round(playerMove, compMove) {
             result="tie";
             break;
         case playerMove==="rock" && compMove==="scissors":
+            result="you win! rock beats scissors.";
+            break;
         case playerMove==="paper" && compMove==="rock":
+            result="you win! paper beats rock.";
+            break;
         case playerMove==="scissors" && compMove==="paper":
-            result="win";
+            result="you win! scissors beats paper.";
             break;
         case playerMove==="rock" && compMove==="paper":
-        case playerMove==="paper" && compMove==="scissors":
-        case playerMove==="scissors" && compMove==="rock":
-            result="loose";
+            result="you loose! paper beats rock.";
             break;
-        // default:
-        //     result="OOPS"
+        case playerMove==="paper" && compMove==="scissors":
+            result = "you loose! scissors beats paper";
+            break;
+        case playerMove==="scissors" && compMove==="rock":
+            result="you loose! rock beats scissors";
+            break;
+        default:
+            result="OOPS! did you type the wrong thing?"
     }
     return result;
 
 }
 
 // create a best of five game calling the round function 
+
 
 // show scores as the game is played then announce win or loss when the game is finished 
