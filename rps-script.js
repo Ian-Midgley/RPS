@@ -76,6 +76,7 @@ function game() {
         else if (roundResult.slice(0,9)==="you loose") {
             looseScore++;
         }
+        console.log(roundResult)
     }
 
     if (winScore > looseScore) {
