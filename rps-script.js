@@ -1,6 +1,6 @@
 // ask user if they want to play
 if (confirm ("Would you like to play a game of Rock, Paper, Scissors?")) {
-    alert ("Ok lets play a 5 round game");
+    alert ("Ok lets play a 5 round game.");
 }
 else {
     alert ("Well that's boring")
@@ -55,5 +55,46 @@ function round(playerMove, compMove) {
 
 // create a best of five game calling the round function 
 
+function game() {
+    let rounds=5;
+    let roundResult;
+    let winScore=0;
+    let looseScore=0;
+    let tieScore=0;
+    let finalResult;
+    let finalMessage;
+
+    for (let i=0; i< rounds; i++) {
+        roundResult= (round(playerChoice(), compChoice()));
+
+        if (roundResult=== "tie") {
+            tieScore++;
+        }
+        else if (roundResult.slice(0,7)==="you win") {
+            winScore++;
+        }
+        else if (roundResult.slice(0,9)==="you loose") {
+            looseScore++;
+        }
+    }
+
+    if (winScore > looseScore) {
+        finalResult="YOU WIN";
+    }
+    else if (winScore<looseScore) {
+        finalResult="YOU LOOSE";
+    }
+    else {
+        finalResult="GAME TIED";
+    }
+    
+    finalMessage=`FINAL SCORE!
+    Wins: ${winScore}
+    Losses: ${looseScore}
+    Ties: ${tieScore}
+    ${finalResult}`
+
+    return console.log(finalMessage)
+}
 
 // show scores as the game is played then announce win or loss when the game is finished 
