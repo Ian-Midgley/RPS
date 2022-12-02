@@ -1,5 +1,11 @@
 // ask user if they want to play
-
+confirm ("Would you like to play a game of Rock, Paper, Scissors?")
+if (confirm ("Would you like to play a game of Rock, Paper, Scissors?")) {
+    alert ("Ok lets play a 5 round game");
+}
+else {
+    alert ("Well that's boring")
+}
 // ask user for there choice
 
 // create random choice for computer
