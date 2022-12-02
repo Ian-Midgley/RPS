@@ -16,8 +16,9 @@ function playerChoice() {
 const element = ["rock" ,"paper","Scissors "];
 
 function compChoice() {
-    let compSelection = Math.floor(Math.random() * element.length);
+    let compSelection = element[Math.floor(Math.random() * element.length)];
     return compSelection;
+    console.log(compSelection);
 }
 
 // play a round and give a winner 
@@ -38,8 +39,8 @@ function round(playerMove, compMove) {
         case playerMove==="scissors" && compMove==="rock":
             result="loose";
             break;
-        default:
-            result="OOPS"
+        // default:
+        //     result="OOPS"
     }
     return result;
 
