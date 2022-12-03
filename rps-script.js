@@ -1,13 +1,17 @@
 // ask user if they want to play
 if (confirm ("Would you like to play a game of Rock, Paper, Scissors?")) {
-    alert ("Ok lets play a 5 round game.");
+    alert ("Ok lets play a 5 round game. To start type: game();");
 }
 else {
-    alert ("Well that's boring")
+    alert ("Well that's boring");
 }
 // ask user for there choice
 function playerChoice() {
     let userSelection = prompt ("please enter your choice (Rock, Paper or Scissors)");
+        while (userSelection.toLowerCase() !== "rock" && userSelection.toLowerCase() !== "paper" && userSelection.toLowerCase() !== "scissors") {
+            userSelection=prompt ("check your spelling and try again (Rock, Paper, Scissors")
+
+        }
     return userSelection.toLowerCase();
 }
 
@@ -95,7 +99,7 @@ function game() {
     Ties: ${tieScore}
     ${finalResult}`
 
-    return console.log(finalMessage)
+    return console.log(finalMessage);
 }
 
 // show scores as the game is played then announce win or loss when the game is finished 
